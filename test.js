@@ -21,7 +21,7 @@ async function send() {
   console.log("Registering Push...");
   const subscription = await register.pushManager.subscribe({
     userVisibleOnly: true,
-    applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
+    applicationServerKey: urlBase64ToUint8Array(_pushly_public_key)
   });
 
   console.log("Push Registered...");

@@ -1,7 +1,6 @@
-const publicVapidKey =
- "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
-debugger;
-  // Declaring the dynamic variables
+const publicVapidKey ="BBf1bHru1FpbXuea-TRmZwnJnPsaswxPChRBCpH2hnbhG21WsQESFIjtcLwBvHckuG0E3pxRztFpteepTcVKKeo";
+ 
+	// "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
 
 // Check for service worker
 if ("serviceWorker" in navigator) {
@@ -12,7 +11,7 @@ if ("serviceWorker" in navigator) {
 async function send() {
   // Register Service Worker
   console.log("Registering service worker...");
-  const register = await navigator.serviceWorker.register("/work.js", {
+  const register = await navigator.serviceWorker.register("/sw.js", {
     scope: "/"
   });
   console.log("Service Worker Registered...");
@@ -26,13 +25,13 @@ async function send() {
 
   console.log("Push Registered...");
   // Send Push Notification
-//  await fetch("/subscribe", {
-//     method: "POST",
-//    body: JSON.stringify(subscription),
-//     headers: {
-//       "content-type": "application/json"
-//     }
-//  });
+ await fetch("/subscribe", {
+    method: "POST",
+   body: JSON.stringify(subscription),
+    headers: {
+      "content-type": "application/json"
+    }
+ });
 console.log("sending push");
 // post the subscription obj to the db
  await fetch("https://pushly.500apps.com/pushly/setting", {
@@ -46,7 +45,6 @@ console.log("sending push");
     .then(response => console.log(response))
     .catch(err => console.log(err));
   }
- 
 
 function urlBase64ToUint8Array(base64String) {
   const padding = "=".repeat((4 - base64String.length % 4) % 4);

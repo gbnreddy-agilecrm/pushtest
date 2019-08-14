@@ -1,4 +1,4 @@
-//const publicVapidKey =
+const publicVapidKey = _pushly_public_key;
 //  "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
 
   // Declaring the dynamic variables
@@ -21,7 +21,7 @@ async function send() {
   console.log("Registering Push...");
   const subscription = await register.pushManager.subscribe({
     userVisibleOnly: true,
-    applicationServerKey: urlBase64ToUint8Array(_pushly_public_key)
+    applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
   });
 
   console.log("Push Registered...");

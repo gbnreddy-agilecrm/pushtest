@@ -23,7 +23,7 @@
 
 'use strict';
 self.addEventListener('push', function(event) {
-  
+  debugger;
   console.log('[Service Worker] Push Received.');
  // console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
   // show this message in Notficatio window
@@ -71,6 +71,7 @@ event.waitUntil(self.registration.showNotification(title, options));
 
   
 self.addEventListener('notificationclick', function(event) {
+  debugger;
   console.log('[Service Worker] Notification click Received.');
   console.log(event.notification);
   event.notification.close();

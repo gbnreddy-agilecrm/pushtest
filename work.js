@@ -24,10 +24,10 @@ self.addEventListener('push', function(event) {
   console.log('[Service Worker] Push Received.');
   console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
 
-  const title =  _pushly_welcome_message.welcomeMessageTitle;
+  const title =  _pushly_welcome_message['welcomeMessageTitle'];
   const options = {
-    body: _pushly_welcome_message.welocmeMessageDesciption,
-    data: _pushly_welcome_message.Redirect Url
+    body: _pushly_welcome_message['welocmeMessageDesciption'],
+    data: _pushly_welcome_message['Redirect Url']
   
   };
 //const notificationPromise = self.registration.showNotification(title, options);

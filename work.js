@@ -27,7 +27,7 @@ self.addEventListener('push', function(event) {
   const title =  _pushly_welcome_message.welcomeMessageTitle;
   const options = {
     body: _pushly_welcome_message.welocmeMessageDesciption,
-    data: _pushly_welcome_message.Redirect Url
+    data: _pushly_welcome_message.redirectUrl
   
   };
 //const notificationPromise = self.registration.showNotification(title, options);

@@ -18,7 +18,7 @@
 */
 
 /* eslint-env browser, serviceworker, es6 */
-
+debugger;
 'use strict';
 self.addEventListener('push', function(event) {
   console.log('[Service Worker] Push Received.');

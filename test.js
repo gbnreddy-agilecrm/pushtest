@@ -40,7 +40,7 @@ console.log("sending push");
     method: "post",
     headers: {
       Accept: "application/json",
-token: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqd3QiLCJlbWFpbCI6ImdlZXRoYW5qYWxpLm11bmdhcmFANTAwYXBwcy5jb20iLCJ0ZW5hbnRfaWQiOiIxNTM0IiwidXNlcl9pZCI6IjI2MDEiLCJ1c2VyX2ltZyI6IiJ9.UVdGlu4P4TMW5SQrNZg6up0bVpjd5vCJbP41BOYoszQ",	    
+//token: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqd3QiLCJlbWFpbCI6ImdlZXRoYW5qYWxpLm11bmdhcmFANTAwYXBwcy5jb20iLCJ0ZW5hbnRfaWQiOiIxNTM0IiwidXNlcl9pZCI6IjI2MDEiLCJ1c2VyX2ltZyI6IiJ9.UVdGlu4P4TMW5SQrNZg6up0bVpjd5vCJbP41BOYoszQ",	    
       //content-type: "application/json"
     },
     body: JSON.stringify(subscription),

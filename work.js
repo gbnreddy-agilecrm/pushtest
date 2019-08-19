@@ -23,14 +23,16 @@ debugger;
 self.addEventListener('push', function(event) {
   console.log('[Service Worker] Push Received.');
   console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
-  console.log(_pushly_welcome_message.welcomeMessageTitle);
+  console.log("");
 
-  const title =  _pushly_welcome_message.welcomeMessageTitle;
+  const title = "welcome message title";    // _pushly_welcome_message.welcomeMessageTitle;
   const options = {
-    body: _pushly_welcome_message.welocmeMessageDesciption,
-    data: _pushly_welcome_message.redirectUrl
+    "body" : "welome message description",                  
+    "data" : "welome message redirect url"
   
   };
+  //pushly_welcome_message.welocmeMessageDesciption,
+  //_pushly_welcome_message.redirectUrl
 //const notificationPromise = self.registration.showNotification(title, options);
 //event.waitUntil(notificationPromise);
 event.waitUntil(self.registration.showNotification(title, options));

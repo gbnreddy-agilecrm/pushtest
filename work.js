@@ -24,11 +24,11 @@ self.addEventListener('push', function(event) {
   console.log('[Service Worker] Push Received.');
   console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
 
-  const title = 'Push Codelab';
+  const title =  _pushly_welcome_message.welcomeMessageTitle;
   const options = {
-    body: `${event.data.text()}`,
-    icon: 'images/icon.png',
-    badge: 'images/badge.png'
+    body: _pushly_welcome_message.welocmeMessageDesciption,
+    data: _pushly_welcome_message.Redirect Url
+  
   };
 //const notificationPromise = self.registration.showNotification(title, options);
 //event.waitUntil(notificationPromise);

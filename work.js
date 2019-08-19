@@ -23,6 +23,7 @@ debugger;
 self.addEventListener('push', function(event) {
   console.log('[Service Worker] Push Received.');
   console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
+  console.log(_pushly_welcome_message.welcomeMessageTitle);
 
   const title =  _pushly_welcome_message.welcomeMessageTitle;
   const options = {

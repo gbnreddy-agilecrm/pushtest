@@ -24,14 +24,7 @@ async function send() {
 
   console.log("Push Registered...");
   // Send Push Notification
- await fetch("/subscribe", {
-    method: "POST",
-   body: JSON.stringify(subscription),
-    headers: {
-      "content-type": "application/json"
-    }
- });
-console.log("sending push");
+ 
 // post the subscription obj to the db
  await fetch("https://pushly.500apps.com/pushly/setting", {
     method: "post",

@@ -1,8 +1,5 @@
-const publicVapidKey = _pushly_public_key;
-      
-    //  "BBf1bHru1FpbXuea-TRmZwnJnPsaswxPChRBCpH2hnbhG21WsQESFIjtcLwBvHckuG0E3pxRztFpteepTcVKKeo";
- 
-	// "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
+const publicVapidKey =
+  "BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
 
 // Check for service worker
 if ("serviceWorker" in navigator) {
@@ -13,8 +10,8 @@ if ("serviceWorker" in navigator) {
 async function send() {
   // Register Service Worker
   console.log("Registering service worker...");
-  const register = await navigator.serviceWorker.register("work.js", {
-    scope: "/pushtest/"
+  const register = await navigator.serviceWorker.register("/work.js", {
+    scope: "/"
   });
   console.log("Service Worker Registered...");
 
@@ -27,20 +24,19 @@ async function send() {
 
   console.log("Push Registered...");
   // Send Push Notification
- //await fetch("/subscribe", {
-   // method: "POST",
-//   body: JSON.stringify(subscription),
-  //  headers: {
-   //   "content-type": "application/json"
-  //  }
-// });
+ await fetch("/subscribe", {
+    method: "POST",
+   body: JSON.stringify(subscription),
+    headers: {
+      "content-type": "application/json"
+    }
+ });
 console.log("sending push");
 // post the subscription obj to the db
  await fetch("https://pushly.500apps.com/pushly/setting", {
     method: "post",
     headers: {
       Accept: "application/json",
-//token: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqd3QiLCJlbWFpbCI6ImdlZXRoYW5qYWxpLm11bmdhcmFANTAwYXBwcy5jb20iLCJ0ZW5hbnRfaWQiOiIxNTM0IiwidXNlcl9pZCI6IjI2MDEiLCJ1c2VyX2ltZyI6IiJ9.UVdGlu4P4TMW5SQrNZg6up0bVpjd5vCJbP41BOYoszQ",	    
       //content-type: "application/json"
     },
     body: JSON.stringify(subscription),

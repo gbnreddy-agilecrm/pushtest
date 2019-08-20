@@ -18,29 +18,32 @@
 */
 
 /* eslint-env browser, serviceworker, es6 */
-debugger;
-'use strict';
+
+//'use strict';
+
+ var flow_id;
+var message_id;
 self.addEventListener('push', function(event) {
   console.log('[Service Worker] Push Received.');
   console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
-  console.log("");
+  var message = JSON.parse(event.data.text());
+  message.options.actions=JSON.parse(message.options.actions);
 
-  const title = "welcome message title";    // _pushly_welcome_message.welcomeMessageTitle;
-  const options = {
-    "body" : "welome message description",                  
-    "data" : "welome message redirect url"
-  
-  };
-  //pushly_welcome_message.welocmeMessageDesciption,
-  //_pushly_welcome_message.redirectUrl
+
+  flow_id = message.flow_id;
+  message_id =  message.message_id;
+  const title = message.title;
+  const options = message.options;
+console.log('Pre Event, Flow ID: '+flow_id);
 //const notificationPromise = self.registration.showNotification(title, options);
 //event.waitUntil(notificationPromise);
 event.waitUntil(self.registration.showNotification(title, options));
 });
 
 self.addEventListener('notificationclick', function(event) {
-  console.log('[Service Worker] Notification click Received.');
-
+  console.log('[Service Worker] Notification click Received.',event.notification);
+ console.log('Action: '+event.action);
+	console.log('Post Event, Flow ID: '+flow_id);
   event.notification.close();
 
   event.waitUntil(

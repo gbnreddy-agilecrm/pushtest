@@ -1,7 +1,7 @@
 const publicVapidKey = _pushly_public_key;
   //"BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
-const title = "welcome to Agilecrm";
-const options = {
+//const title = "welcome to Agilecrm";
+//const options = {
     "body" : "welome message description",                  
     "data" : "welome message redirect url"
   
@@ -39,7 +39,7 @@ async function send() {
     },
     body: JSON.stringify(subscription),
     }).then(response => response.json())
-    .then(response => self.registration.showNotification(title, options))
+    .then(response => alert({{_pushly_welcome_message.welcomeMessageDescription}}))
     .catch(err => console.log(err));
   }
 

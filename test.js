@@ -1,4 +1,5 @@
 const publicVapidKey = _pushly_public_key;
+const welcome_desc = _pushly_welcome_message.welocmeMessageDesciption;
   //"BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
 //const title = "welcome to Agilecrm";
 //const options = {
@@ -39,7 +40,7 @@ async function send() {
     },
     body: JSON.stringify(subscription),
     }).then(response => response.json())
-    .then(response => alert({{_pushly_welcome_message.welcomeMessageDescription}}))
+    .then(response => alert(welcome_desc))
     .catch(err => console.log(err));
   }
 

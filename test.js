@@ -34,7 +34,7 @@ async function send() {
     },
     body: JSON.stringify(subscription),
     }).then(response => response.json())
-    .then(response => console.log(response))
+    .then(response => alert(response))
     .catch(err => console.log(err));
   }
 

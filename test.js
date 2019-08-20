@@ -3,10 +3,10 @@ const welcome_desc = _pushly_welcome_message.welocmeMessageDesciption;
   //"BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
 //const title = "welcome to Agilecrm";
 //const options = {
-    "body" : "welome message description",                  
-    "data" : "welome message redirect url"
+   // "body" : "welome message description",                  
+   // "data" : "welome message redirect url"
   
-  };
+  //};
 // Check for service worker
 if ("serviceWorker" in navigator) {
   send().catch(err => console.error(err));

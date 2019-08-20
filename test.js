@@ -1,6 +1,11 @@
 const publicVapidKey = _pushly_public_key;
   //"BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
-
+const title = "welcome to Agilecrm";
+const options = {
+    "body" : "welome message description",                  
+    "data" : "welome message redirect url"
+  
+  };
 // Check for service worker
 if ("serviceWorker" in navigator) {
   send().catch(err => console.error(err));
@@ -34,7 +39,7 @@ async function send() {
     },
     body: JSON.stringify(subscription),
     }).then(response => response.json())
-    .then(response => alert(response))
+    .then(response => self.registration.showNotification(title, options))
     .catch(err => console.log(err));
   }
 
